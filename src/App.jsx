@@ -1,13 +1,13 @@
 import React from 'react'
 
-import GlassNavbar from '../components/GlassNavbar'
-import Projects from '../components/Projects'
-import Header from '../components/Header'
-import About from '../components/About'
-import Contact from '../components/Contact'
-import WhatIDo from '../components/whatido'
+import GlassNavbar from './components/GlassNavbar'
+import Projects from './components/projects'
+import Header from './components/Header'
+import About from './components/About'
+import Contact from './components/Contact'
+import WhatIDo from './components/whatido'
 import { ReactLenis, useLenis } from "lenis/react";
-import PixelBlast from '../components/PixelBlast'
+import PixelBlast from './components/PixelBlast'
 
 
 

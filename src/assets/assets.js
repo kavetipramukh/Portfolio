@@ -28,9 +28,5 @@ export const assets = {
   outro
 }
 
-export const infoList = [
-    { icon: assets.code_icon, title: 'Languages', description: 'HTML, CSS, JavaScript React Js, Python' },
-    { icon: assets.edu_icon, title: 'Education', description: 'B.Tech in Computer Science' },
-    { icon: assets.project_icon, title: 'Projects', description: 'Built more than 5 projects' }
-];
+
 
