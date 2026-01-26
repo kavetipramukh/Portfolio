@@ -7,7 +7,7 @@ import { ReactLenis, useLenis } from "lenis/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const projects = () => {
+const Projects = () => {
   const container = useRef(null);
   const lenis = useLenis();
 
@@ -71,7 +71,7 @@ const projects = () => {
             <div
               className={`card-inner relative w-full h-full p-8 flex gap-16 ${bgColors[index]}`}
             >
-              <div className="flex-[3]">
+              <div className="flex-3">
                 <h1 className="text-6xl font-semibold leading-none mb-10">
                   {card.title}
                 </h1>
@@ -93,4 +93,4 @@ const projects = () => {
   );
 };
 
-export default projects;
+export default Projects;

@@ -1,7 +1,7 @@
 import React from 'react'
 import hero from '../assets/hero.jpeg'
 import photo from '../assets/photo.png'
-import { infoList, assets } from '../assets/assets.js'  
+import { assets } from '../assets/assets.js'  
 import { Github, Linkedin, ArrowUpRight, Copy } from "lucide-react";
 
 
