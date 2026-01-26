@@ -7,7 +7,7 @@ import { ReactLenis, useLenis } from "lenis/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Projects = () => {
+const projects = () => {
   const container = useRef(null);
   const lenis = useLenis();
 
@@ -93,4 +93,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default projects;
