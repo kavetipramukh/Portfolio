@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import "tailwindcss";
+
+*{
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+}
+
+
+
+html{
+  scroll-behavior: smooth;
+}
+
+/* Add to your global CSS or index.css */
+.animate-slide-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+
+
+
+/* Text reveal animation styles */
+.animate-text {
+  position: relative;
+  color: #4f4f4f;
+  --clip-value: 100%;
+}
+
+.animate-text::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  inset: 0;
+  color: white;
+  clip-path: inset(0 0 var(--clip-value) 0);
+  will-change: clip-path;
+}
+
+.name{
+  font-family: sans-serif;
+  font-weight: bolder;
+}
