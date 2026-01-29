@@ -3,13 +3,13 @@ import { assets } from "../assets/assets";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ReactLenis, useLenis } from "lenis/react";
+// import { ReactLenis, useLenis } from "lenis/react";
 
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 
 const Projects = () => {
   const container = useRef(null);
-  const lenis = useLenis();
+  // const lenis = useLenis();
 
   const cardsData = [
     {
@@ -28,17 +28,17 @@ const Projects = () => {
 
   const bgColors = [
     "bg-[#c3abff]",
-    "bg-white",
+    "bg-[#ffb261]",
     "bg-[#fed35b]",
-    "bg-[#1e1e1e] text-white",
+    // "bg-[#1e1e1e] text-white",
   ];
 
   // 🔗 Lenis + ScrollTrigger sync
-  React.useEffect(() => {
-    if (!lenis) return;
+  // React.useEffect(() => {
+  //   if (!lenis) return;
 
-    lenis.on("scroll", ScrollTrigger.update);
-  }, [lenis]);
+  //   lenis.on("scroll", ScrollTrigger.update);
+  // }, [lenis]);
 
   useGSAP(
     () => {
@@ -53,6 +53,7 @@ const Projects = () => {
           endTrigger: cards[cards.length - 1],
           end: "top 35%",
           pin: true,
+          scrub: 1,
           pinSpacing: false,
         });
       });
@@ -94,3 +95,5 @@ const Projects = () => {
 };
 
 export default Projects;
+
+

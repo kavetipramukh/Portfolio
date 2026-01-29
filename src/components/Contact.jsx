@@ -3,7 +3,7 @@ import { Mail, PhoneCall, LucideLocationEdit } from "lucide-react";
 
 const Contact = () => {
   return (
-    <section className="w-full bg-[#1a1a1a] text-white px-6 md:px-16 lg:px-24 py-20">
+    <section id="contact" className="w-full bg-[#1a1a1a] text-white px-6 md:px-16 lg:px-24 py-20">
       {/* Title */}
       <div className="text-center mb-14">
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
@@ -34,7 +34,7 @@ const Contact = () => {
 
             <div className="flex items-center gap-4 text-gray-300">
               <PhoneCall className="w-5 h-5 text-white" />
-              <span>+91 98765 43210</span>
+              <span>+91 ............</span>
             </div>
 
             <div className="flex items-center gap-4 text-gray-300">

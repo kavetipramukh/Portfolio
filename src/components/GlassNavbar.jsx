@@ -23,10 +23,10 @@ export default function GlassNavbar() {
       <div className="flex items-center justify-end md:justify-center px-6 py-4">
         {/* Desktop */}
         <ul className="hidden md:flex items-center gap-8 text-sm text-white/80">
-          {["Home", "Work", "About", "Contact"].map((item) => (
+          {["Home", "About", "Work", "Contact"].map((item) => (
             <li key={item}>
               <a
-                href="#"
+                href={`#${item.toLowerCase()}`}
                 className="hover:text-white transition"
               >
                 {item}
@@ -52,7 +52,7 @@ export default function GlassNavbar() {
             {["Home", "Work", "About", "Contact"].map((item) => (
               <li key={item}>
                 <a
-                  href="#"
+                  href={`#${item.toLowerCase()}`}
                   className="block hover:text-white transition"
                   onClick={() => setOpen(false)}
                 >
