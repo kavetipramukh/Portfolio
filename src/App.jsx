@@ -54,11 +54,11 @@ const App = () => {
       </div>
       
 
-      <div className=''>
+      <div id='outro' className=''>
         <WhatIDo />
       </div>
 
-      <div className='outer flex top '>
+      <div className=' flex '>
       <Contact />
       </div>
     </div>

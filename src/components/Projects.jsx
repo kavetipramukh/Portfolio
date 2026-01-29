@@ -11,7 +11,7 @@ const Projects = () => {
   const container = useRef(null);
   // const lenis = useLenis();
 
-  const cardsData = [
+  const cards = [
     {
       title: "Frontend project",
       copy: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
@@ -64,7 +64,7 @@ const Projects = () => {
   return (
     
       <section ref={container} className="flex flex-col">
-        {cardsData.map((card, index) => (
+        {cards.map((card, index) => (
           <div
             key={index}
             className="card relative h-[300px]"
