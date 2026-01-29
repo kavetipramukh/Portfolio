@@ -28,7 +28,7 @@ const Projects = () => {
 
   const bgColors = [
     "bg-[#c3abff]",
-    "bg-[#ffb261]",
+    "bg-[#474646] text-white" ,
     "bg-[#fed35b]",
     // "bg-[#1e1e1e] text-white",
   ];
