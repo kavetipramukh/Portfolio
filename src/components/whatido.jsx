@@ -104,7 +104,7 @@ export default function WhatIDo() {
       </section>
 
       {/* SERVICES COPY */}
-      <section className="relative px-8 sm:pb-[28svh] md:pb-[35svh] text-center">
+      <section className="relative px-8 pb-[35svh] text-center">
         <h1 className=" relative -mt-100  w-[60%] lg:top-70 mx-auto text-white/75 text-[4rem] font-black leading-tight tracking-[-0.15rem] max-[1000px]:text-[2rem] max-[1000px]:w-full">
           FREELANCING <br /> Machine Learning <br /> Artificial Intelligence <br /> Web Development <br /> Problem Solving <br /> UI-UX          
         </h1>
