@@ -3,15 +3,12 @@ import { assets } from "../assets/assets";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-// import { ReactLenis, useLenis } from "lenis/react";
 
-// gsap.registerPlugin(ScrollTrigger);
 
 const Projects = () => {
   const container = useRef(null);
-  // const lenis = useLenis();
 
-  const cards = [
+  const cardsData = [
     {
       title: "Frontend project",
       copy: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
@@ -28,17 +25,9 @@ const Projects = () => {
 
   const bgColors = [
     "bg-[#c3abff]",
-    "bg-[#474646] text-white" ,
+    "bg-[#474646] text-white",
     "bg-[#fed35b]",
-    // "bg-[#1e1e1e] text-white",
   ];
-
-  // 🔗 Lenis + ScrollTrigger sync
-  // React.useEffect(() => {
-  //   if (!lenis) return;
-
-  //   lenis.on("scroll", ScrollTrigger.update);
-  // }, [lenis]);
 
   useGSAP(
     () => {
@@ -53,7 +42,6 @@ const Projects = () => {
           endTrigger: cards[cards.length - 1],
           end: "top 35%",
           pin: true,
-          scrub: 1,
           pinSpacing: false,
         });
       });
@@ -62,38 +50,31 @@ const Projects = () => {
   );
 
   return (
-    
-      <section ref={container} className="flex flex-col">
-        {cards.map((card, index) => (
+    <section ref={container} className="flex flex-col">
+      {cardsData.map((card, index) => (
+        <div key={index} className="card relative h-[300px]">
           <div
-            key={index}
-            className="card relative h-[300px]"
+            className={`card-inner relative w-full h-full p-8 flex gap-16 ${bgColors[index]}`}
           >
-            <div
-              className={`card-inner relative w-full h-full p-8 flex gap-16 ${bgColors[index]}`}
-            >
-              <div className="flex-3">
-                <h1 className="text-6xl font-semibold leading-none mb-10">
-                  {card.title}
-                </h1>
-                <p className="">{card.copy}</p>
-              </div>
+            <div className="flex-[3]">
+              <h1 className="text-6xl font-semibold leading-none mb-10">
+                {card.title}
+              </h1>
+              <p className="">{card.copy}</p>
+            </div>
 
-              <div className=" flex-1 aspect-video rounded-xl overflow-hidden">
-                <img
-                  src={assets[`card_${index + 1}`]}
-                  alt={card.title}
-                  className="w-full h-full object-cover"
-                />
-              </div>
+            <div className="flex-1 aspect-video rounded-xl overflow-hidden">
+              <img
+                src={assets[`card_${index + 1}`]}
+                alt={card.title}
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
-        ))}
-      </section>
-    
+        </div>
+      ))}
+    </section>
   );
 };
 
 export default Projects;
-
-
