@@ -75,7 +75,7 @@ export default function WhatIDo() {
   return (
     <main
       ref={rootRef}
-      className="bg-[#1a1a1a] font-manrope text-white "
+      className="bg-black font-manrope text-white "
     >
       {/* HERO */}
       {/* <section className="relative h-[100svh] p-8 flex items-center justify-center overflow-hidden">
@@ -95,7 +95,7 @@ export default function WhatIDo() {
         {[1, 2, 3].map((i) => (
           <div
             key={i}
-            className="services-header w-full px-8 bg-[#1a1a1a] will-change-transform"
+            className="services-header w-full px-8 bg-black will-change-transform"
           >
             <img src={whatidonobg} className="object-contain w-full" />
           </div>
@@ -104,7 +104,7 @@ export default function WhatIDo() {
 
       {/* SERVICES COPY */}
       <section className="relative px-8 pb-[35svh] text-center">
-        <h1 className=" relative lg:-mt-100 w-[60%] lg:top-70 mx-auto text-white/75 text-[4rem] font-black leading-tight tracking-[-0.15rem] max-[1000px]:text-[2rem] max-[1000px]:w-full">
+        <h1 className=" relative -mt-100 w-[60%] lg:top-70 mx-auto text-white/75 text-[4rem] font-black leading-tight tracking-[-0.15rem] max-[1000px]:text-[2rem] max-[1000px]:w-full">
           FREELANCING <br /> Machine Learning <br /> Artificial Intelligence <br /> Web Development <br /> Problem Solving <br /> UI-UX          
         </h1>
       </section>

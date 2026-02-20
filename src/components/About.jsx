@@ -1,7 +1,5 @@
 import React from 'react'
-import hero from '../assets/hero.jpeg'
 import photo from '../assets/photo.png'
-import { assets } from '../assets/assets.js'  
 import { Github, Linkedin, ArrowUpRight, Copy, Code, Layers, Wrench, CodeXml } from "lucide-react";
 
 
@@ -14,7 +12,9 @@ const About = () => {
     ]
 
     return (
+        
         <div id='about' className='w-full min-h-screen px-[12%] py-10 scroll-mt-20 bg-black text-white'>
+            
             <div className='xl:hidden'>
                 <h4 className='text-center mb-2 text-lg font-Ovo'>Introduction</h4>
                 <h2 className='text-center text-3xl sm:text-4xl lg:text-5xl font-Ovo'>About me</h2>
@@ -139,7 +139,7 @@ const About = () => {
                             {/* Copy Email */}
                             <button
                                 type="button"
-                                onClick={() => navigator.clipboard.writeText('kavetipramukh122@gmail.com')}
+                                onClick={() => navigator.clipboard.writeText('pramukh.kavetii@gmail.com')}
                                 className="w-full text-left group p-3 sm:p-4 flex items-center justify-between hover:bg-zinc-800/50 transition-colors cursor-pointer"
                             >
                                 <div className="flex items-center gap-3">
