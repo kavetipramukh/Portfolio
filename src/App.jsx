@@ -8,12 +8,14 @@ import WhatIDo from './components/whatido'
 import { ReactLenis, useLenis } from "lenis/react";
 import gsap from 'gsap';
 import HeroText from './components/HeroText';
+import Footer from './components/Footer'
 
 gsap.registerPlugin(ScrollTrigger);
 
 const App = () => {
   
   return (
+    <>
     <ReactLenis root>
     <div className='intro h-screen  relative' id='home'>
       <div className=' bg-black h-screen'>
@@ -21,7 +23,7 @@ const App = () => {
         
           <HeroText />
       </div>
-
+    </div>
       <About />
       <div className='flex justify-center pt-10 bg-black' >
         <h1 className='text-5xl text-white pb-5'>Projects</h1>
@@ -38,8 +40,11 @@ const App = () => {
       <div className=' flex '>
       <Contact />
       </div>
-    </div>
+
+      <Footer className="w-full" />
+    
     </ReactLenis>
+    </>
   )
 }
 
