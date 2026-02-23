@@ -16,7 +16,7 @@ const Projects = () => {
       copy: "A full-stack social media app with real-time chat, posts & stories, follow system, and secure authentication. Built with Clerk, Inngest, and ImageKit for scalable workflows and optimized media delivery.",
       github: "https://github.com/kavetipramukh/PingUp",
       live: "",
-      stack: ["Next.js", "Clerk", "Inngest", "ImageKit", "Tailwind CSS"],
+      stack: ["React.js", "Clerk", "Inngest", "ImageKit", "Tailwind CSS"],
     },
     {
       title: "Hruday Photography — Freelance project",
@@ -53,7 +53,9 @@ const Projects = () => {
           endTrigger: cards[cards.length - 1],
           end: "top 35%",
           pin: true,
+          scrub: 1,
           pinSpacing: false,
+          invalidateOnRefresh: true,
         });
       });
     },
@@ -65,10 +67,10 @@ const Projects = () => {
       {cardsData.map((card, index) => (
         <div key={index} className="card relative h-[300px]">
           <div
-            className={`card-inner relative w-full h-full p-8  flex gap-16 ${bgColors[index]}`}
+            className={`card-inner relative w-full h-full p-8 flex gap-16 ${bgColors[index]}`}
           >
             <div className="flex-[3] flex flex-col">
-              <h1 className="text-2xl font-semibold leading-none mb-3 xl:text-4xl">
+              <h1 className="text-xl font-semibold leading-none mb-3 xl:text-4xl">
                 {card.title}
               </h1>
               <p className="text-sm lg:text-xl">{card.copy}</p>
@@ -81,7 +83,7 @@ const Projects = () => {
                 ))}
               </div>
               
-              <div className="flex gap-4 flex-wrap mt-auto ">
+              <div className="flex gap-4 flex-wrap mt-auto overflow-hidden">
                 <a href={card.github} alt="GitHub repository" title="GitHub" target="_blank" rel="noopener noreferrer" className="px-3 py-3 bg-white/40 hover:bg-white/70 text-black/80 rounded-md inline-flex items-center gap-2"><span className="hidden lg:inline">GitHub</span>
                   <Github className="w-5 h-5" />
                   
