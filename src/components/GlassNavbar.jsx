@@ -49,7 +49,7 @@ export default function GlassNavbar() {
       {open && (
         <div className="md:hidden border-t border-white/20 px-6 py-4 backdrop-blur-xl">
           <ul className="flex flex-col gap-4 text-white/80">
-            {["Home", "Work", "About", "Contact"].map((item) => (
+            {["Home", "About", "Work", "Contact"].map((item) => (
               <li key={item}>
                 <a
                   href={`#${item.toLowerCase()}`}

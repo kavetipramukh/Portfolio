@@ -4,7 +4,6 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Github, SquareArrowOutUpRight } from "lucide-react";
-import { stack } from "three/tsl";
 
 
 const Projects = () => {
@@ -16,7 +15,7 @@ const Projects = () => {
       copy: "A full-stack social media app with real-time chat, posts & stories, follow system, and secure authentication. Built with Clerk, Inngest, and ImageKit for scalable workflows and optimized media delivery.",
       github: "https://github.com/kavetipramukh/PingUp",
       live: "",
-      stack: ["React.js", "Clerk", "Inngest", "ImageKit", "Tailwind CSS"],
+      stack: ["React.js", "Clerk", "Inngest", "ImageKit", "Tailwind CSS", "MongoDB"],
     },
     {
       title: "Hruday Photography — Freelance project",
@@ -40,23 +39,68 @@ const Projects = () => {
     "bg-[#fed35b]",
   ];
 
+  // useGSAP(
+  //   () => {
+  //     const cards = gsap.utils.toArray(".card");
+
+  //     cards.forEach((card, index) => {
+  //       if (index === cards.length - 1) return;
+
+  //       ScrollTrigger.create({
+  //         trigger: card,
+  //         start: "top 35%",
+  //         endTrigger: cards[cards.length - 1],
+  //         end: "top 35%",
+  //         pin: true,
+  //         scrub: 1,
+  //         pinSpacing: false,
+  //         invalidateOnRefresh: true,
+  //       });
+  //     });
+  //   },
+  //   { scope: container }
+  // );
+
+  
+
   useGSAP(
     () => {
       const cards = gsap.utils.toArray(".card");
 
-      cards.forEach((card, index) => {
-        if (index === cards.length - 1) return;
+      ScrollTrigger.matchMedia({
+        // 🖥 DESKTOP (pin stack)
+        "(min-width: 769px)": () => {
+          cards.forEach((card, index) => {
+            if (index === cards.length - 1) return;
 
-        ScrollTrigger.create({
-          trigger: card,
-          start: "top 35%",
-          endTrigger: cards[cards.length - 1],
-          end: "top 35%",
-          pin: true,
-          scrub: 1,
-          pinSpacing: false,
-          invalidateOnRefresh: true,
-        });
+            ScrollTrigger.create({
+              trigger: card,
+              start: "top 35%",
+              endTrigger: cards[cards.length - 1],
+              end: "top 35%",
+              pin: true,
+              pinSpacing: false,
+              // anticipatePin: 1, // 👈 smoother after other pinned sections
+            });
+          });
+        },
+
+        // 📱 MOBILE (smooth scroll)
+        "(max-width: 768px)": () => {
+          cards.forEach((card) => {
+            gsap.from(card, {
+              opacity: 0,
+              y: 40,
+              duration: 0.6,
+              ease: "power2.out",
+              scrollTrigger: {
+                trigger: card,
+                start: "top 90%",
+                once: true,
+              },
+            });
+          });
+        },
       });
     },
     { scope: container }
@@ -70,12 +114,12 @@ const Projects = () => {
             className={`card-inner relative w-full h-full p-8 flex gap-16 ${bgColors[index]}`}
           >
             <div className="flex-[3] flex flex-col">
-              <h1 className="text-xl font-semibold leading-none mb-3 xl:text-4xl">
+              <h1 className="text-md font-semibold leading-none mb-3 lg:text-2xl xl:text-4xl">
                 {card.title}
               </h1>
-              <p className="text-sm lg:text-xl">{card.copy}</p>
+              <p className="text-sm xl:text-xl">{card.copy}</p>
               {/* <p className="text-sm mt-2">{card.stack.map((tech) => (<span key={tech} className="inline-block bg-black text-white px-2 py-1 rounded-md mr-2 mb-2 text-xs">{tech}</span>))}</p> */}
-              <div className="mt-2 flex gap-2 flex-wrap mb-1">
+              <div className="mt-2 gap-2 flex-wrap mb-1 hidden sm:flex">
                 {card.stack.map((tech) => (
                   <span key={tech} className={`inline-block lg:px-2 py-1 text-sm underline underline-offset-4 decoration-1 decoration-${bgColors[index].split(' ')[0].replace('bg-', '')}/50`}>
                     {tech}
